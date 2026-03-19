@@ -1,15 +1,678 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barbearia Navalha Fina</title>
+  <meta name="description" content="Barbearia moderna: corte, barba e acabamento premium. Agende online em minutos." />
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Barbershop Website (Community)</title>
-    </head>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Fonte (opcional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="90" tabindex="0">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark sticky-top nav-glass">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+        <span class="brand-mark">NF</span>
+        <span class="fw-bold">Navalha Fina</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navlinks"
+        aria-controls="navlinks" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navlinks" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#precos">Preços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+
+          <li class="nav-item ms-lg-2">
+            <button id="btnTheme" class="btn btn-outline-light btn-sm rounded-pill" type="button">
+              <i class="bi bi-moon-stars"></i>
+              <span class="ms-1 d-none d-sm-inline">Tema</span>
+            </button>
+          </li>
+
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-gold rounded-pill px-3" href="#agendar">
+              <i class="bi bi-calendar2-check me-1"></i> Agendar
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="inicio" class="hero">
+    <div class="container position-relative">
+      <div class="row align-items-center g-4 py-5">
+        <div class="col-lg-7">
+          <span class="badge text-bg-dark border border-warning-subtle mb-3">
+            <i class="bi bi-scissors me-1"></i> Corte + Barba + Estilo
+          </span>
+
+          <h1 class="display-5 fw-800 lh-1 mb-3">
+            Sua melhor versão começa na cadeira.
+          </h1>
+
+          <p class="lead text-secondary-emphasis mb-4">
+            Atendimento pontual, acabamento premium e ambiente confortável.
+            Agende em menos de 1 minuto.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-gold btn-lg rounded-pill px-4" href="#agendar">
+              <i class="bi bi-lightning-charge-fill me-1"></i> Agendar agora
+            </a>
+            <a class="btn btn-outline-light btn-lg rounded-pill px-4" href="#servicos">
+              Ver serviços
+            </a>
+          </div>
+
+          <div class="hero-stats mt-4">
+            <div class="stat">
+              <div class="stat-number" data-count="1200">0</div>
+              <div class="stat-label">clientes/ano</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-count="4.9">0</div>
+              <div class="stat-label">nota média</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-count="35">0</div>
+              <div class="stat-label">min média</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-card shadow-lg">
+            <div class="hero-card-top">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="dot dot-green"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-red"></div>
+                </div>
+                <small class="text-secondary">Agenda rápida</small>
+              </div>
+            </div>
+
+            <div class="p-4">
+              <h2 class="h5 fw-bold mb-3">Próximos horários</h2>
+
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-light text-start slot" data-slot="Hoje • 18:20">
+                  <i class="bi bi-clock me-2"></i> Hoje • 18:20
+                </button>
+                <button class="btn btn-outline-light text-start slot" data-slot="Amanhã • 10:40">
+                  <i class="bi bi-clock me-2"></i> Amanhã • 10:40
+                </button>
+                <button class="btn btn-outline-light text-start slot" data-slot="Sáb • 15:00">
+                  <i class="bi bi-clock me-2"></i> Sáb • 15:00
+                </button>
+              </div>
+
+              <hr class="border-secondary my-4" />
+
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-geo-alt text-warning"></i>
+                  <small class="text-secondary">Centro • Rua Exemplo, 123</small>
+                </div>
+                <a class="link-warning link-underline-opacity-0" href="#contato">ver mapa</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-secondary small mt-3 mb-0">
+            Dica: clique em um horário acima para pré-preencher o agendamento.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bg" aria-hidden="true"></div>
+  </header>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="section-pad">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
+        <div>
+          <h2 class="h1 fw-800 mb-1">Serviços</h2>
+          <p class="text-secondary mb-0">Escolha o combo ideal para o seu estilo.</p>
+        </div>
+        <a class="btn btn-outline-light rounded-pill" href="#precos">
+          Ver preços <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="icon-pill mb-3"><i class="bi bi-scissors"></i></div>
+              <h3 class="h5 fw-bold">Corte Clássico</h3>
+              <p class="text-secondary mb-0">Tesoura e máquina com acabamento e finalização.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="icon-pill mb-3"><i class="bi bi-person-badge"></i></div>
+              <h3 class="h5 fw-bold">Barba Terapia</h3>
+              <p class="text-secondary mb-0">Toalha quente, navalha, hidratação e alinhamento.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="icon-pill mb-3"><i class="bi bi-lightning-charge"></i></div>
+              <h3 class="h5 fw-bold">Combo Corte + Barba</h3>
+              <p class="text-secondary mb-0">O mais pedido: visual completo, rápido e impecável.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="icon-pill mb-3"><i class="bi bi-stars"></i></div>
+              <h3 class="h5 fw-bold">Pigmentação</h3>
+              <p class="text-secondary mb-0">Correção e realce para barba/cabelo (sob consulta).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="icon-pill mb-3"><i class="bi bi-droplet"></i></div>
+              <h3 class="h5 fw-bold">Lavagem + Finalização</h3>
+              <p class="text-secondary mb-0">Shampoo premium, scalp care e styling.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="icon-pill mb-3"><i class="bi bi-heart-pulse"></i></div>
+              <h3 class="h5 fw-bold">Sobrancelha</h3>
+              <p class="text-secondary mb-0">Design masculino natural com acabamento discreto.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PREÇOS -->
+  <section id="precos" class="section-pad section-alt">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="h1 fw-800 mb-1">Preços</h2>
+        <p class="text-secondary mb-0">Transparência total. Sem surpresas.</p>
+      </div>
+
+      <div class="row g-3 align-items-stretch">
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <h3 class="h5 fw-bold mb-2">Corte</h3>
+              <div class="price mb-3">R$ <span>45</span></div>
+              <ul class="list-check text-secondary">
+                <li>Consultoria rápida</li>
+                <li>Acabamento na navalha</li>
+                <li>Finalização com produto</li>
+              </ul>
+              <button class="btn btn-outline-light w-100 rounded-pill btnPickService" data-service="Corte" data-price="45">
+                Escolher
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark card-featured h-100 border border-warning-subtle">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <h3 class="h5 fw-bold mb-2">Combo</h3>
+                <span class="badge text-bg-warning text-dark">Mais pedido</span>
+              </div>
+
+              <div class="price mb-3">R$ <span>85</span></div>
+              <ul class="list-check text-secondary">
+                <li>Corte completo</li>
+                <li>Barba com toalha quente</li>
+                <li>Hidratação + finalização</li>
+              </ul>
+              <button class="btn btn-gold w-100 rounded-pill btnPickService" data-service="Combo Corte + Barba" data-price="85">
+                Escolher
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <h3 class="h5 fw-bold mb-2">Barba</h3>
+              <div class="price mb-3">R$ <span>50</span></div>
+              <ul class="list-check text-secondary">
+                <li>Toalha quente</li>
+                <li>Navalha + alinhamento</li>
+                <li>Óleo/hidratante</li>
+              </ul>
+              <button class="btn btn-outline-light w-100 rounded-pill btnPickService" data-service="Barba" data-price="50">
+                Escolher
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <div class="accordion accordion-dark" id="faq">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Precisa agendar ou posso chegar na hora?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body text-secondary">
+                Você pode chegar na hora, mas o agendamento garante prioridade e pontualidade.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Quais formas de pagamento?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body text-secondary">
+                PIX, débito, crédito e dinheiro. (Edite conforme sua barbearia.)
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="section-pad">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
+        <div>
+          <h2 class="h1 fw-800 mb-1">Galeria</h2>
+          <p class="text-secondary mb-0">Alguns estilos que a gente curte fazer.</p>
+        </div>
+        <button class="btn btn-outline-light rounded-pill" data-bs-toggle="modal" data-bs-target="#modalGallery">
+          Ver em tela cheia <i class="bi bi-arrows-fullscreen ms-1"></i>
+        </button>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-6 col-lg-3">
+          <div class="gallery-tile" style="--img:url('../assets/gallery-1.jpg')" role="img" aria-label="Foto de corte 1"></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="gallery-tile" style="--img:url('../assets/gallery-2.jpg')" role="img" aria-label="Foto de corte 2"></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="gallery-tile" style="--img:url('../assets/gallery-3.jpg')" role="img" aria-label="Foto de corte 3"></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="gallery-tile" style="--img:url('../assets/gallery-4.jpg')" role="img" aria-label="Foto de corte 4"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="section-pad section-alt">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="h1 fw-800 mb-1">Depoimentos</h2>
+        <p class="text-secondary mb-0">O que a galera fala depois do corte.</p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="stars mb-2" aria-label="Avaliação 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="mb-3">“Pontual e caprichado. O combo vale muito.”</p>
+              <div class="d-flex align-items-center gap-2 text-secondary">
+                <i class="bi bi-person-circle fs-5"></i> <span>Lucas M.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="stars mb-2" aria-label="Avaliação 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="mb-3">“Barba com toalha quente é outro nível. Ambiente top.”</p>
+              <div class="d-flex align-items-center gap-2 text-secondary">
+                <i class="bi bi-person-circle fs-5"></i> <span>Rafael S.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card card-dark h-100">
+            <div class="card-body">
+              <div class="stars mb-2" aria-label="Avaliação 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="mb-3">“O cara entende o formato do rosto. Recomendo.”</p>
+              <div class="d-flex align-items-center gap-2 text-secondary">
+                <i class="bi bi-person-circle fs-5"></i> <span>Diego P.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AGENDAMENTO -->
+  <section id="agendar" class="section-pad">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6">
+          <h2 class="h1 fw-800 mb-2">Agende online</h2>
+          <p class="text-secondary mb-4">
+            Preencha os dados e confirme. O agendamento fica salvo no seu navegador (demo com LocalStorage).
+          </p>
+
+          <div class="card card-dark">
+            <div class="card-body">
+              <form id="bookingForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Nome</label>
+                    <input id="name" class="form-control form-control-dark" type="text" placeholder="Seu nome" required minlength="2">
+                    <div class="invalid-feedback">Informe seu nome.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">WhatsApp</label>
+                    <input id="whatsapp" class="form-control form-control-dark" type="tel" placeholder="(11) 99999-9999" required>
+                    <div class="invalid-feedback">Informe um WhatsApp válido.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Serviço</label>
+                    <select id="service" class="form-select form-control-dark" required>
+                      <option value="" selected>Selecione…</option>
+                      <option value="Corte">Corte</option>
+                      <option value="Barba">Barba</option>
+                      <option value="Combo Corte + Barba">Combo Corte + Barba</option>
+                      <option value="Sobrancelha">Sobrancelha</option>
+                      <option value="Lavagem + Finalização">Lavagem + Finalização</option>
+                    </select>
+                    <div class="invalid-feedback">Selecione um serviço.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Data</label>
+                    <input id="date" class="form-control form-control-dark" type="date" required>
+                    <div class="invalid-feedback">Escolha uma data.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Horário</label>
+                    <input id="time" class="form-control form-control-dark" type="time" required>
+                    <div class="invalid-feedback">Escolha um horário.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Barbeiro</label>
+                    <select id="barber" class="form-select form-control-dark" required>
+                      <option value="" selected>Selecione…</option>
+                      <option value="João (Fade)">João (Fade)</option>
+                      <option value="Marcos (Clássico)">Marcos (Clássico)</option>
+                      <option value="Renan (Barba)">Renan (Barba)</option>
+                    </select>
+                    <div class="invalid-feedback">Selecione um barbeiro.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label">Observações (opcional)</label>
+                    <textarea id="notes" class="form-control form-control-dark" rows="3" placeholder="Ex: degradê baixo, risca na navalha..."></textarea>
+                  </div>
+
+                  <div class="col-12 d-grid">
+                    <button class="btn btn-gold btn-lg rounded-pill" type="submit">
+                      <i class="bi bi-check2-circle me-1"></i> Confirmar agendamento
+                    </button>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="d-flex flex-wrap gap-2 align-items-center justify-content-between">
+                      <small class="text-secondary">
+                        <i class="bi bi-shield-check me-1"></i> Seus dados ficam apenas no seu navegador (demo).
+                      </small>
+                      <button id="btnClear" type="button" class="btn btn-sm btn-outline-light rounded-pill">
+                        Limpar agendamentos salvos
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h3 class="h4 fw-bold mb-0">Agendamentos salvos</h3>
+            <span class="badge text-bg-dark border border-secondary" id="countSaved">0</span>
+          </div>
+
+          <div id="savedBookings" class="vstack gap-3">
+            <!-- preenchido via JS -->
+          </div>
+
+          <div class="card card-dark mt-3">
+            <div class="card-body">
+              <div class="d-flex gap-3">
+                <div class="icon-pill"><i class="bi bi-info-circle"></i></div>
+                <div>
+                  <div class="fw-bold">Integração real (opcional)</div>
+                  <div class="text-secondary">
+                    Você pode trocar o salvamento local por envio para WhatsApp/Email/Google Agenda via backend.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section-pad section-alt">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h2 class="h1 fw-800 mb-2">Contato</h2>
+          <p class="text-secondary mb-4">
+            Ajuste os dados para a sua barbearia (endereço, telefone e links).
+          </p>
+
+          <div class="card card-dark">
+            <div class="card-body">
+              <div class="vstack gap-3">
+                <div class="d-flex gap-3">
+                  <div class="icon-pill"><i class="bi bi-geo-alt"></i></div>
+                  <div>
+                    <div class="fw-bold">Endereço</div>
+                    <div class="text-secondary">Rua Exemplo, 123 — Centro</div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3">
+                  <div class="icon-pill"><i class="bi bi-telephone"></i></div>
+                  <div>
+                    <div class="fw-bold">Telefone</div>
+                    <div class="text-secondary">(11) 4000-0000</div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3">
+                  <div class="icon-pill"><i class="bi bi-clock"></i></div>
+                  <div>
+                    <div class="fw-bold">Horários</div>
+                    <div class="text-secondary">Seg–Sex 10h–20h • Sáb 9h–18h</div>
+                  </div>
+                </div>
+
+                <hr class="border-secondary my-1"/>
+
+                <div class="d-flex gap-2 flex-wrap">
+                  <a class="btn btn-outline-light rounded-pill" href="#" target="_blank" rel="noreferrer">
+                    <i class="bi bi-instagram me-1"></i> Instagram
+                  </a>
+                  <a class="btn btn-outline-light rounded-pill" href="#" target="_blank" rel="noreferrer">
+                    <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                  </a>
+                  <a class="btn btn-outline-light rounded-pill" href="#" target="_blank" rel="noreferrer">
+                    <i class="bi bi-geo me-1"></i> Google Maps
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+          <div class="map-card">
+            <!-- Mapa fake/placeholder (troque por iframe do Google Maps se quiser) -->
+            <div class="map-placeholder">
+              <div class="text-center">
+                <div class="display-6 mb-1"><i class="bi bi-map"></i></div>
+                <div class="fw-bold">Mapa (placeholder)</div>
+                <div class="text-secondary small">Troque por um iframe do Google Maps.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="small text-secondary mt-2">
+            Para colocar o mapa real: pegue o iframe em “Compartilhar” no Google Maps e cole aqui.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container d-flex flex-wrap gap-2 justify-content-between align-items-center">
+      <div class="text-secondary">
+        © <span id="year"></span> Navalha Fina — Todos os direitos reservados.
+      </div>
+      <a class="link-secondary link-underline-opacity-0" href="#inicio">
+        Voltar ao topo <i class="bi bi-arrow-up-short"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- MODAL: Galeria -->
+  <div class="modal fade" id="modalGallery" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content modal-dark">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title fw-bold">Galeria</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6 col-lg-3"><div class="gallery-tile lg" style="--img:url('../assets/gallery-1.jpg')"></div></div>
+            <div class="col-md-6 col-lg-3"><div class="gallery-tile lg" style="--img:url('../assets/gallery-2.jpg')"></div></div>
+            <div class="col-md-6 col-lg-3"><div class="gallery-tile lg" style="--img:url('../assets/gallery-3.jpg')"></div></div>
+            <div class="col-md-6 col-lg-3"><div class="gallery-tile lg" style="--img:url('../assets/gallery-4.jpg')"></div></div>
+          </div>
+          <div class="text-secondary small mt-3">
+            Dica: coloque suas imagens na pasta <code>assets/</code> com esses nomes ou altere os caminhos no HTML.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Confirmação -->
+  <div class="modal fade" id="modalSuccess" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-dark">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title fw-bold">Agendamento confirmado</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary mb-2">Seu agendamento foi salvo. Confira os detalhes:</p>
+          <div id="successDetails" class="p-3 rounded-3 border border-secondary"></div>
+        </div>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light rounded-pill" data-bs-dismiss="modal">Fechar</button>
+          <a class="btn btn-gold rounded-pill" href="#contato" data-bs-dismiss="modal">
+            Ver contato <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Seu JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
